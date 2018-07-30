@@ -14,16 +14,11 @@ import com.jorge.jsf.util.HibernateUtil;
 @Service
 public class UsuarioImpl implements UsuarioService{	
 
-	private static Session session = HibernateUtil.getSessionFactory().openSession();
-	
 	@Autowired
 	private UsuarioRepository  repository;
 	
 	@Override	
 	public Usuario findById(Integer id) throws Exception {
-		
-		
-		
 		
 		return this.repository.finById(id);
 	}
