@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class  name="com." table="tbl_user"
+            dynamic-insert="false" dynamic-update="false" mutable="true"
+            optimistic-lock="version" polymorphism="implicit" select-before-update="false">
+        <id name="appid" type="int">
+            <column name="APPID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="appowner" type="string">
+            <column name="APPOWNER" length="30" not-null="true" />
+        </property>
+        <property name="appcreated" type="timestamp">
+            <column name="APPCREATED" not-null="true" />
+        </property>
+        <property name="appuser" type="string">
+            <column name="APPUSER" length="30" not-null="true" />
+        </property>
+        <property name="apptimestamp" type="timestamp">
+            <column name="APPTIMESTAMP" not-null="true" />
+        </property>
+        <property name="appxml" type="text">
+            <column name="APPXML" not-null="true" />
+        </property>
+        <property name="appaction" type="string">
+            <column name="APPACTION" length="10" not-null="true" />
+        </property>
+        <property name="appstep" type="string">
+            <column name="APPSTEP" length="10" not-null="true" />
+        </property>
+        <property name="appflag" type="string">
+            <column name="APPFLAG" length="10" not-null="true" />
+        </property>
+        <property name="appmessage" type="string">
+            <column name="APPMESSAGE" length="1000" />
+        </property>
+        <property name="appattachments" type="string">
+            <column name="APPATTACHMENTS" length="200" />
+        </property>
+        <property name="appattachmentcount" type="long">
+            <column name="APPATTACHMENTCOUNT" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="appiter" type="long">
+            <column name="APPITER" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="applock" type="long">
+            <column name="APPLOCK" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="appkw01" type="string">
+            <column name="APPKW01" length="100" />
+        </property>
+        <property name="appkw02" type="string">
+            <column name="APPKW02" length="100" />
+        </property>
+        <property name="appkw03" type="string">
+            <column name="APPKW03" length="100" />
+        </property>
+        <property name="appkw04" type="string">
+            <column name="APPKW04" length="100" />
+        </property>
+        <property name="appkw05" type="string">
+            <column name="APPKW05" length="100" />
+        </property>
+        <property name="appkw06" type="string">
+            <column name="APPKW06" length="100" />
+        </property>
+        <property name="appkw07" type="string">
+            <column name="APPKW07" length="100" />
+        </property>
+        <property name="appkw08" type="string">
+            <column name="APPKW08" length="100" />
+        </property>
+        <property name="appkw09" type="string">
+            <column name="APPKW09" length="100" />
+        </property>
+        <property name="appkw10" type="string">
+            <column name="APPKW10" length="100" />
+        </property>
+        <property name="appkw11" type="string">
+            <column name="APPKW11" length="100" />
+        </property>
+        <property name="appkw12" type="string">
+            <column name="APPKW12" length="100" />
+        </property>
+        <property name="appkw13" type="string">
+            <column name="APPKW13" length="100" />
+        </property>
+        <property name="appkw14" type="string">
+            <column name="APPKW14" length="100" />
+        </property>
+        <property name="appkw15" type="string">
+            <column name="APPKW15" length="100" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
