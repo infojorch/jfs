@@ -1,43 +1,72 @@
 package com.jorge.jsf.model;
 
-import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name="usuario")
 public class Usuario {
 	
 	private Integer id;
 	
-	private String nombre = "Jorge Chavez";
-	private String apellido = "Mondragon";
+	private String name;
+	private String nick_user;
+	private String password;
+	private Integer role_id_fk;
 	
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Usuario(Integer id, String nombre, String apellido) {
-		super();
+	
+
+	public Usuario(Integer id, String name, String nick_user, String password, Integer role_id_fk) {
+	
 		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
+		this.name = name;
+		this.nick_user = nick_user;
+		this.password = password;
+		this.role_id_fk = role_id_fk;
 	}
+
+
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
+
+	public String getName() {
+		return name;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getApellido() {
-		return apellido;
+
+	public String getNick_user() {
+		return nick_user;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+
+	public void setNick_user(String nick_user) {
+		this.nick_user = nick_user;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Integer getRole_id_fk() {
+		return role_id_fk;
+	}
+
+	public void setRole_id_fk(Integer role_id_fk) {
+		this.role_id_fk = role_id_fk;
+	}
+	
 	
 	
 	

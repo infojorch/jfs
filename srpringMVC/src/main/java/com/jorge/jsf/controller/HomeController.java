@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jorge.jsf.implement.UsuarioImpl;
 import com.jorge.jsf.model.Usuario;
 import com.jorge.jsf.service.UsuarioService;
 
@@ -25,13 +26,14 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Autowired
+	private UsuarioService service;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model) throws Exception {
 		
 		
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
 		
 		
 		Date date = new Date();
@@ -41,7 +43,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("isUser", true);
-		model.addAttribute("user", new Usuario(1,"Probando","Otro app"));
+		model.addAttribute("user", this.service.findById(1));
 		
 		return "home";
 	}

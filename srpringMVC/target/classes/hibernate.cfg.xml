@@ -17,6 +17,6 @@
   <property name="hibernate.default_schema">system</property>
   <property name="show_sql">true</property>
  
-  <mapping resource="META-INF/hibernate-maps/tbl_GuiApp.hbm.xml"></mapping>
+  <mapping resource="hibernate-maps/tbl_User.hbm.xml"></mapping>
 </session-factory>
 </hibernate-configuration>

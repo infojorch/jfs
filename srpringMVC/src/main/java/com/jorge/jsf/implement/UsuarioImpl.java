@@ -1,47 +1,38 @@
 package com.jorge.jsf.implement;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.inject.Inject;
-
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jorge.jsf.model.Usuario;
 import com.jorge.jsf.repository.UsuarioRepository;
-import com.jorge.jsf.repository.UsuarioRepositoryImpl;
 import com.jorge.jsf.service.UsuarioService;
+import com.jorge.jsf.util.HibernateUtil;
 
+@Service
+public class UsuarioImpl implements UsuarioService{	
 
-@ManagedBean(name = "usuarioService")
-@SessionScoped
-public class UsuarioImpl implements UsuarioService{
-	
-
-	
-	
-	private UsuarioRepository usuarioRepositoryImpl;
+	private static Session session = HibernateUtil.getSessionFactory().openSession();
 	
 	@Autowired
-	public void setUsuarioRepositoryImpl(UsuarioRepository usuarioRepositoryImpl) {
-		this.usuarioRepositoryImpl = usuarioRepositoryImpl;
-	}
+	private UsuarioRepository  repository;
 	
-	@Override
-	@Transactional
+	@Override	
 	public Usuario findById(Integer id) throws Exception {
 		
 		
-		return null;
+		
+		
+		return this.repository.finById(id);
 	}
 
 	@Override
 	public String hola() {
 	
 		try {
-			return this.usuarioRepositoryImpl.saludar();
+			return "";
 		} catch (Exception e) {
 			return "ERROR";
 		}
